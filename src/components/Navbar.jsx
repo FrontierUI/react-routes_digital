@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { IoIosArrowDown } from 'react-icons/io';
@@ -9,6 +9,7 @@ import RoutesLogo from '../assets/imgs/routeslogo.svg';
 import Pricing1 from '../assets/imgs/menu-pricing1.svg';
 import Pricing2 from '../assets/imgs/menu-pricing2.svg';
 import Pricing3 from '../assets/imgs/menu-pricing3.svg';
+import { FiMenu } from 'react-icons/fi';
 
 const navItems = [
   { label: 'Pricing', link: '/' },
@@ -18,6 +19,14 @@ const navItems = [
     subLinks: [{ label: 'Brand', link: '/', iconImg: Pricing1 }],
   },
 ];
+
+const [isSideMenuOpen, setSideMenue] = useState(false);
+function openSideMenu() {
+  setSideMenue(true);
+}
+function closeSideMenu() {
+  setSideMenue(false);
+}
 
 export const Navbar = () => {
   return (
@@ -92,6 +101,11 @@ export const Navbar = () => {
           Get Demo
         </button>
       </section>
+
+      <FiMenu
+        onClick={openSideMenu}
+        className="cursor-pointer text-4xl md:hidden"
+      />
     </div>
   );
 };
