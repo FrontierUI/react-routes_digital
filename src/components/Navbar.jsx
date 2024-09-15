@@ -11,24 +11,25 @@ import Pricing2 from '../assets/imgs/menu-pricing2.svg';
 import Pricing3 from '../assets/imgs/menu-pricing3.svg';
 import { FiMenu } from 'react-icons/fi';
 
-const navItems = [
-  { label: 'Pricing', link: '/' },
-  {
-    label: 'Capabilities',
-    link: '/',
-    subLinks: [{ label: 'Brand', link: '/', iconImg: Pricing1 }],
-  },
-];
-
-const [isSideMenuOpen, setSideMenue] = useState(false);
-function openSideMenu() {
-  setSideMenue(true);
-}
-function closeSideMenu() {
-  setSideMenue(false);
-}
-
 export const Navbar = () => {
+  const navItems = [
+    { label: 'Pricing', link: '/' },
+    {
+      label: 'Capabilities',
+      link: '/',
+      subLinks: [{ label: 'Brand', link: '/', iconImg: Pricing1 }],
+    },
+  ];
+
+  const [isSideMenuOpen, setSideMenue] = useState(false);
+
+  function openSideMenu() {
+    setSideMenue(true);
+  }
+  function closeSideMenu() {
+    setSideMenue(false);
+  }
+
   return (
     <div className="mx-auto bg-white rounded-full flex w-full items-center justify-between px-10 py-8 text-lg z-50">
       <section className="flex items-center gap-5">
